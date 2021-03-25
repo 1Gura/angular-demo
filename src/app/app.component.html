@@ -1,5 +1,7 @@
 <div class="container">
-  <app-post-form>
+  <app-post-form
+    (onAdd)="updatePosts($event)"
+  >
 
   </app-post-form>
 
@@ -8,5 +10,10 @@
   <app-post *ngFor="let p of posts"
             [post]="p"
   >
+    <div #info>
+      <small *ngIf="p.text.length > 10; else short">Пост длинный</small>
+      <ng-template #short>Пост короткий</ng-template>
+    </div>
+
   </app-post>
 </div>

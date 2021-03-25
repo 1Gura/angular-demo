@@ -1,8 +1,9 @@
 <div>
   <form action="">
     <h1>Форма для постов</h1>
-    <input type="text" class = '' placeholder="title" [(ngModel)]="title" name="title"> <br>
+    <input #titleInput type="text" class = '' placeholder="title" [(ngModel)]="title" name="title"> <br>
     <textarea type="text" class = '' placeholder="text" [(ngModel)]="text" name="text"></textarea> <br>
     <button class="btn" (click)="addPost()">Добавить пост</button>
+    <button (click)="focusTitle()">FOCUS</button>
   </form>
 </div>
